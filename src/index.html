@@ -5,19 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700&display=swap" rel="stylesheet">
-    <title>Gulp & SCSS</title>
+    <title>V/tech portfolio</title>
     
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+  <!-- introduction screen -->
   <div class="introduction-screen" id="introduction-screen">
-    <div class="nano-container">
+    <div class="nano-container opaque" id="nano">
       <p>GNU nano 2.0.6</p>
       <p>File: welcome.txt</p>
+      <div class="empty"></div>
     </div>
+
+    <div class="text-container opaque" id="text-container">
+      <div class="typed-text-container">
+        <p>#</p>
+        <div class="typed-txt first" id="typed-txt-first"></div>
+      </div>
+
+      <div class="decision-text opaque" id="decision-text">
+        <p id="tell-him">Tell him</p>
+        <p id="not-say">I'd rather not say</p>
+      </div>
+      <div class="name-window opaque" id="name-window">
+        <input type="text" id="user-name" class="user-name" placeholder="Enter name">
+        <p id="submit" class="submit">Submit</p>
+      </div>
+    </div>
+
+    <div class="bottom-menu opaque" id="bottom-menu">
+      <p>I'm tired of this, just show me the rest of the site</p>
+      <nav>
+        <a href="#" class="nav-item">About</a>
+        <a href="#" class="nav-item">Portfolio</a>
+        <a href="#" class="nav-item">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- welcome message -->
+  <div class="welcome-message none" id="welcome-message">
+    <p id="welcome-text"></p>
   </div>
   
 
-  <script src="/js/index.js"></script>  
+  <script src="/js/index.js"></script>
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 </body>
 </html>

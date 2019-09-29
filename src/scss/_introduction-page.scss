@@ -1,9 +1,143 @@
-.introduction-screen {
-  width: 100%;
-  height: 100vh;
-}
-
+//fade-in black on load
 .black-screen {
   background-color: $black;
   transition: 2s;
 }
+
+//opaque items during load
+.opaque {
+  opacity: 0;
+}
+
+//class for taking out items
+.none {
+  display: none;
+}
+
+.introduction-screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  //top
+  .nano-container {
+    padding: .5rem;
+    margin: .5rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: $white;
+    transition: $appearance; //appearance transition
+
+    p {
+      color: $black;
+      margin: 0;
+    }
+
+    .empty {
+      width: 15%;
+    }
+  }
+  
+  //middle
+  .text-container {
+    margin-top: -20rem;
+    transition: $appearance; //appearance transition
+    padding: .5rem;
+  }
+  
+  p {
+    color: $white;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
+
+  .typed-text-container {
+    display: flex;
+  }
+
+  .typed-txt {
+    color: $white;
+  }
+
+  a {
+    background-color: $white;
+    text-decoration: none;
+    color: $black;
+    padding: .25rem;
+  }
+
+  //decision text opaque at first, appears after typing is complete
+  .decision-text {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    transition: 1s;
+
+    p {
+      cursor: pointer;
+      padding: 1rem;
+    }
+  }
+
+  //name window appears when "Tell him" clicked
+  .name-window {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .user-name {
+      background-color: $black;
+      border: solid $white 5px;
+      color: $white;
+      padding: .25rem;
+      font-family: 'Ubuntu Mono', monospace;
+      font-size: 1rem;
+
+      &::placeholder {
+        color: white;
+        font-size: 1rem;
+        font-family: 'Ubuntu Mono', monospace;
+      }
+    }
+    
+    .submit {
+      background-color: $white;
+      color: $black;
+      border: none;
+      margin: 0 0 0 .5rem;
+      padding: .25rem;
+      cursor: pointer;
+    }
+  }
+
+  //bottom
+  .bottom-menu {
+    margin: 1rem;
+    transition: $appearance; //appearance transition
+
+    p {
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+
+      @media only screen and (min-width: 650px) {
+        width: 40%;
+
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .empty {
+    display: none;
+  }
+} 
