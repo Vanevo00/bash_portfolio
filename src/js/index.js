@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const submit = document.querySelector('#submit');
   const welcomeMessage = document.querySelector('#welcome-message');
   const welcomeText = document.querySelector('#welcome-text');
+  const anyKey = document.querySelector('#any-key');
 
   introductionScreen.classList.add('black-screen');
 
@@ -66,10 +67,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const welcomeAnonymous = () => {
     wipeScreen();
     welcomeText.innerHTML = 'Nice to meet you, anonymous';
+
+    setTimeout(() => {
+      welcomeText.classList.remove('opaque');
+    },
+    2000);
+
+    setTimeout(() => {
+      anyKey.classList.remove('opaque');
+    },
+    3500);
   };
 
   const welcomeUser = () => {
+    const userName = document.querySelector('#user-name').value;
     wipeScreen();
+    welcomeText.innerHTML = `Nice to meet you, ${userName}`;
+
+    setTimeout(() => {
+      welcomeText.classList.remove('opaque');
+    },
+    2000);
+
+    setTimeout(() => {
+      anyKey.classList.remove('opaque');
+    },
+    3500);
   };
 
   submit.addEventListener('click', welcomeUser);
