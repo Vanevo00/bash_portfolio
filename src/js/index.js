@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   1800);
 
   // typewriter effect introduction page
+  // eslint-disable-next-line no-undef
   const firstTypewriterEffect = new Typewriter(typedTxtFirst, {
     loop: false,
     delay: 50,

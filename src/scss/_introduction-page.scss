@@ -45,6 +45,10 @@
     margin-top: -20rem;
     transition: $appearance; //appearance transition
     padding: .5rem;
+
+    @media only screen and (max-height: 650px) {
+      margin-top: -10rem;
+    }
   }
   
   p {
