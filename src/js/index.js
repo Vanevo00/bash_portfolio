@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const welcomeMessage = document.querySelector('#welcome-message');
   const welcomeText = document.querySelector('#welcome-text');
   const anyKey = document.querySelector('#any-key');
+  const about = document.querySelector('#about');
 
   introductionScreen.classList.add('black-screen');
 
@@ -54,6 +55,21 @@ document.addEventListener('DOMContentLoaded', () => {
   tellHim.addEventListener('click', showNameWindow);
 
   // fade out to next phase and show welcome message
+  const toAbout = () => {
+    welcomeText.classList.add('opaque');
+    anyKey.classList.add('opaque');
+    setTimeout(() => {
+      welcomeMessage.style.display = 'none';
+      about.style.display = 'flex';
+    },
+    2000);
+
+    setTimeout(() => {
+      about.style.backgroundColor = 'yellow';
+    },
+    2500);
+  };
+
   const wipeScreen = () => {
     nano.classList.add('opaque');
     textContainer.classList.add('opaque');
@@ -65,25 +81,15 @@ document.addEventListener('DOMContentLoaded', () => {
     1500);
   };
 
-  const welcomeAnonymous = () => {
-    wipeScreen();
-    welcomeText.innerHTML = 'Nice to meet you, anonymous';
-
-    setTimeout(() => {
-      welcomeText.classList.remove('opaque');
-    },
-    2000);
-
-    setTimeout(() => {
-      anyKey.classList.remove('opaque');
-    },
-    3500);
-  };
-
   const welcomeUser = () => {
     const userName = document.querySelector('#user-name').value;
     wipeScreen();
-    welcomeText.innerHTML = `Nice to meet you, ${userName}`;
+
+    if (userName === '') {
+      welcomeText.innerHTML = 'Nice to meet you, anonymous';
+    } else {
+      welcomeText.innerHTML = `Nice to meet you, ${userName}`;
+    }
 
     setTimeout(() => {
       welcomeText.classList.remove('opaque');
@@ -92,10 +98,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
       anyKey.classList.remove('opaque');
+      document.addEventListener('keydown', toAbout);
+      document.addEventListener('touchstart', toAbout);
     },
     3500);
   };
 
   submit.addEventListener('click', welcomeUser);
-  notSay.addEventListener('click', welcomeAnonymous);
+  notSay.addEventListener('click', welcomeUser);
 });
