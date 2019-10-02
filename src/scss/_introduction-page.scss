@@ -82,7 +82,12 @@
 
     p {
       cursor: pointer;
-      padding: 1rem;
+      padding: .5rem;
+    }
+
+    .white-btn {
+      background-color: $white;
+      color: $black;
     }
   }
 
@@ -131,6 +136,10 @@
     nav {
       display: flex;
       justify-content: space-between;
+
+      a {
+        padding: .5rem;
+      }
 
       @media only screen and (min-width: 650px) {
         width: 40%;

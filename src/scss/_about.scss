@@ -1,8 +1,94 @@
-.about {
-  display: none;
-  height: 100vh;
+* {
+  box-sizing: border-box;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  background-color: $black;
-  color: $white;
-  transition: 2s;
+  height: 100vh;
+  font-family: 'Kanit', sans-serif;
+  overflow: hidden;
+
+  //header
+  header {
+    background-color: $darkBlue;
+    padding: 1rem;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.3rem;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      cursor: pointer;
+
+      .line {
+        background-color: $white;
+        width: 25px;
+        height: 3px;
+        margin-bottom: 5px;
+      }
+
+      .no-margin {
+        margin: 0;
+      }
+    }
+  }
+
+  //top
+  .about-top {
+    border-top: solid $white 2px;
+    background-color: $darkBlue;
+    color: $white;
+
+    h1 {
+      padding: 1rem;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    p {
+      text-align: justify;
+      padding: 1rem 1rem 3rem 1rem;
+    }
+  }
+
+  //profile image
+  .profile-image {
+    width: 6rem;
+    align-self: center;
+    border-radius: 180%;
+    margin-top: -50px;
+  }
+//bottom
+
+  .about-bottom {
+    overflow: scroll;
+    padding: 1rem;
+
+    h1 {
+      padding: 1rem;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .tech-imgs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      img {
+        height: 4rem;
+        margin: .5rem;
+      }
+    }
+  }
 }

@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const nano = document.querySelector('#nano');
   const textContainer = document.querySelector('#text-container');
   const bottomMenu = document.querySelector('#bottom-menu');
-  const typedTxtFirst = document.querySelector('#typed-txt-first');
   const decisionText = document.querySelector('#decision-text');
   const tellHim = document.querySelector('#tell-him');
   const notSay = document.querySelector('#not-say');
@@ -11,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const welcomeMessage = document.querySelector('#welcome-message');
   const welcomeText = document.querySelector('#welcome-text');
   const anyKey = document.querySelector('#any-key');
-  const about = document.querySelector('#about');
 
   introductionScreen.classList.add('black-screen');
 
@@ -26,48 +24,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // typewriter effect introduction page
   // eslint-disable-next-line no-undef
-  const firstTypewriterEffect = new Typewriter(typedTxtFirst, {
-    loop: false,
-    delay: 50,
-  });
-
-  firstTypewriterEffect.start()
-    .pauseFor(3000)
-    .typeString('Hi, my name is Vojtech. Welcome to my portfolio site.')
-    .pauseFor(500)
-    .changeDeleteSpeed(10)
-    .deleteChars(30)
-    .pauseFor(400)
-    .typeString(' What is your name?');
+  new TypeIt('#typed-txt-first', {
+    speed: 50,
+    startDelay: 2300,
+    cursor: false,
+  })
+    .type('Hi, my name\'s Vojtech. I\'m a web developer.')
+    .pause(300)
+    .delete(20)
+    .pause(250)
+    .type('What\'s your name?')
+    .pause(750)
+    .go();
 
   // show decision menu in delay
   setTimeout(() => {
     decisionText.classList.remove('opaque');
   },
-  10000);
+  7000);
 
   // decision time
-  const showNameWindow = () => {
-    const nameWindow = document.querySelector('#name-window');
-    nameWindow.classList.remove('opaque');
-  };
-
-  tellHim.addEventListener('click', showNameWindow);
 
   // fade out to next phase and show welcome message
   const toAbout = () => {
     welcomeText.classList.add('opaque');
     anyKey.classList.add('opaque');
     setTimeout(() => {
-      welcomeMessage.style.display = 'none';
-      about.style.display = 'flex';
+      window.location.href = 'about.html';
     },
     2000);
-
-    setTimeout(() => {
-      about.style.backgroundColor = 'yellow';
-    },
-    2500);
   };
 
   const wipeScreen = () => {
@@ -104,6 +89,17 @@ document.addEventListener('DOMContentLoaded', () => {
     3500);
   };
 
+  const showNameWindow = () => {
+    const nameWindow = document.querySelector('#name-window');
+    nameWindow.classList.remove('opaque');
+    document.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        welcomeUser();
+      }
+    });
+  };
+
+  tellHim.addEventListener('click', showNameWindow);
   submit.addEventListener('click', welcomeUser);
   notSay.addEventListener('click', welcomeUser);
 });
