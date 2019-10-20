@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
     textContainer.classList.add('opaque');
     bottomMenu.classList.add('opaque');
     setTimeout(() => {
-      introductionScreen.style.display = 'none';
-      welcomeMessage.style.display = 'flex';
+      introductionScreen.classList.add('none');
+      welcomeMessage.classList.remove('none');
     },
     1500);
   };
