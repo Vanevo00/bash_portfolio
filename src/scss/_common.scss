@@ -4,6 +4,15 @@
 
 html {
   font-family: 'Ubuntu Mono', monospace;
+  font-size: 14px;
+
+  @media only screen and (min-width: 650px) {
+    font-size: 22px;
+  }
+}
+
+p {
+  font-size: 1rem;
 }
 
 body {
@@ -13,4 +22,14 @@ body {
 
 p, h1, h2, h3, h4, h5, h6 {
   margin: 0;
+}
+
+//class for taking out items
+.none {
+  display: none;
+}
+
+//opaque items during load
+.opaque {
+  opacity: 0;
 }

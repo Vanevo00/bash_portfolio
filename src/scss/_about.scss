@@ -9,6 +9,7 @@
   height: 100vh;
   font-family: 'Kanit', sans-serif;
   overflow: hidden;
+  transition: 3s;
 
   //header
   header {
@@ -21,33 +22,45 @@
 
     p {
       font-family: 'Lato', sans-serif;
-      font-size: 1.3rem;
+      font-size: 1rem;
     }
 
     nav {
       display: flex;
-      flex-direction: column;
-      padding: 10px;
-      cursor: pointer;
+      flex-direction: row;
 
-      .line {
-        background-color: $white;
-        width: 25px;
-        height: 3px;
-        margin-bottom: 5px;
-      }
+      a {
+        color: $white;
+        font-size: 1rem;
+        padding: .25rem .5rem;
+        text-decoration: none;
+        border-top: solid $darkBlue 2px;
 
-      .no-margin {
-        margin: 0;
+        &:hover {
+          border-top: solid $white 2px;
+        }
       }
     }
   }
 
+  .auto-height {
+    height: 150px;
+  }
+
+  //about page
+  .about-page {
+    transition: .5s;
+    flex-grow: 1;
+    
+  }
+  
   //top
   .about-top {
     border-top: solid $white 2px;
     background-color: $darkBlue;
     color: $white;
+    max-height: 50vh;
+    overflow: scroll;
 
     h1 {
       padding: 1rem;
@@ -57,7 +70,7 @@
 
     p {
       text-align: justify;
-      padding: 1rem 1rem 3rem 1rem;
+      padding: 1rem 1rem 2rem 1rem;
     }
   }
 
@@ -67,6 +80,11 @@
     align-self: center;
     border-radius: 180%;
     margin-top: -50px;
+    display: none;
+
+    @media only screen and (min-width: 650px) {
+      display: block;
+    }
   }
 //bottom
 
@@ -75,7 +93,7 @@
     padding: 1rem;
 
     h1 {
-      padding: 1rem;
+      padding: 0 1rem 1rem 1rem;
       font-size: 1.8rem;
       text-align: center;
     }
@@ -88,7 +106,17 @@
       img {
         height: 4rem;
         margin: .5rem;
+        transition: 2s;
       }
+    }
+
+    p {
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: $black;
     }
   }
 }
