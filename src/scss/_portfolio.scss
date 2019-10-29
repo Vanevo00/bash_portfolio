@@ -1,8 +1,55 @@
 .portfolio-page {
-  background-color: orange;
-  display: flex;
   flex-grow: 1;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   transition: .5s;
+  position: relative;
+
+  i {
+    color: $darkBlue;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .fa-arrow-alt-circle-up {
+    top: 2rem;
+  }
+
+  .fa-arrow-alt-circle-down {
+    bottom: 2rem;
+  }
+
+  .portfolio-item {
+    height: 100%;
+    width: 100%;
+    padding: 0 2rem;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    color: $darkBlue;
+    transition: .5s;
+
+    &-1 {
+      background-image: url("../img/pacman.png");
+    }
+
+    &-2 {
+      background-color: red;
+    }
+
+    &-3 {
+      background-color: green;
+    }
+
+    &-description {
+      background-color: white;
+      opacity: .9;
+      padding: .5rem;
+    }
+  }
 }

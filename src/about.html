@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Kanit:400,700|Lato:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
   <link rel="icon" href="/img/favicon.png">
   <title>V/tech - about</title>
 </head>
@@ -14,11 +15,11 @@
   <div class="about-container opaque" id="about-container">
     <!-- header: logo + menu -->
     <header>
-      <p>&lt;V/tech&gt;</p>
+      <p>&lt;V/<span class="yellow">tech</span>&gt;</p>
       <nav>
-        <a href="#" id="about">About</a>
-        <a href="#" id="portfolio">Portfolio</a>
-        <a href="#" id="contact">Contact</a>
+        <p id="about">About</p>
+        <p id="portfolio">Portfolio</p>
+        <p id="contact">Contact</p>
       </nav>
     </header>
 
@@ -37,17 +38,18 @@
       <div class="about-bottom">
         <h1>Tech stack</h1>
         <div class="tech-imgs">
-          <img src="/img/html5.png" alt="HTML 5" id="tech1" class="opaque">
-          <img src="/img/css3.png" alt="CSS 3" id="tech2" class="opaque">
-          <img src="/img/bootstrap.png" alt="Bootstrap" id="tech3" class="opaque">
-          <img src="/img/js.png" alt="JavaScript" id="tech4" class="opaque">
-          <img src="/img/react.png" alt="React" id="tech5" class="opaque">
-          <img src="/img/php.png" alt="PHP" id="tech6" class="opaque">
-          <img src="/img/laravel.png" alt="Laravel" id="tech7" class="opaque">
-          <img src="/img/python.png" alt="Python" id="tech8" class="opaque">
-          <img src="/img/mysql.png" alt="MySQL" id="tech9" class="opaque">
-          <img src="/img/git.png" alt="Git" id="tech10" class="opaque">
-        </div> 
+          <img src="/img/html5.png" alt="HTML 5" id="tech1" class="opaque tech-img">
+          <img src="/img/css3.png" alt="CSS 3" id="tech2" class="opaque tech-img">
+          <img src="/img/bootstrap.png" alt="Bootstrap" id="tech3" class="opaque tech-img">
+          <img src="/img/js.png" alt="JavaScript" id="tech4" class="opaque tech-img">
+          <img src="/img/react.png" alt="React" id="tech5" class="opaque tech-img">
+          <img src="/img/php.png" alt="PHP" id="tech6" class="opaque tech-img">
+          <img src="/img/laravel.png" alt="Laravel" id="tech7" class="opaque tech-img">
+          <img src="/img/python.png" alt="Python" id="tech8" class="opaque tech-img">
+          <img src="/img/mysql.png" alt="MySQL" id="tech9" class="opaque tech-img">
+          <img src="/img/git.png" alt="Git" id="tech10" class="opaque tech-img">
+        </div>
+        <div id="tech-img-description" class="tech-img-description">Select any picture</div>
         <!-- <a href="#">
           <p>View portfolio</p>
           <p class="animated flash slower infinite">&#x21e9;</p>
@@ -57,7 +59,29 @@
 
     <!-- portfolio page -->
     <div class="portfolio-page none opaque" id="portfolio-page">
-      <p>Portfolio page</p>
+      <i class="far fa-arrow-alt-circle-up fa-3x" id="up-arrow"></i>
+      <div class="portfolio-item portfolio-item-1" id="portfolio-item-1"> 
+        <div class="portfolio-item-description">
+          <h2>Pacman game</h2>
+          <p class="subdescription">A Pacman game built with vanilla JS, using interaction between classes, drawing data from an API</p>
+          <p class="tech-stack">Tech stack: HTML, CSS, Vanilla JS</p>
+        </div>
+      </div>
+      <div class="portfolio-item portfolio-item-2 none opaque" id="portfolio-item-2"> 
+        <div class="portfolio-item-description">
+          <h2>Portfolio item 2</h2>
+          <p class="subdescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, magnam.</p>
+          <p class="tech-stack">Tech stack: HTML, CSS, Vanilla JS</p>
+        </div>
+      </div>
+      <div class="portfolio-item portfolio-item-3 none opaque" id="portfolio-item-3"> 
+        <div class="portfolio-item-description">
+          <h2>Portfolio item 3</h2>
+          <p class="subdescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, magnam.</p>
+          <p class="tech-stack">Tech stack: HTML, CSS, Vanilla JS</p>
+        </div>
+      </div>
+      <i class="far fa-arrow-alt-circle-down fa-3x" id="down-arrow"></i>
     </div>
 
     <!-- contact page -->
@@ -68,4 +92,6 @@
   </div>
 </body>
 <script src="/js/about.js"></script>
+<script src="/js/portfolio.js"></script>
+<script src="https://kit.fontawesome.com/3bca9cb446.js" crossorigin="anonymous"></script>
 </html>

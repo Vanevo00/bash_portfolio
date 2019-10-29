@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 document.addEventListener('DOMContentLoaded', () => {
   let currentPage = 'about';
   const aboutContainer = document.querySelector('#about-container');
@@ -7,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const aboutPage = document.querySelector('#about-page');
   const portfolioPage = document.querySelector('#portfolio-page');
   const contactPage = document.querySelector('#contact-page');
+  const techImgDesc = document.querySelector('#tech-img-description');
+  const techImgArr = document.querySelectorAll('.tech-img');
 
   setTimeout(() => {
     aboutContainer.classList.remove('opaque');
@@ -30,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       aboutPage.classList.add('none');
       portfolioPage.classList.add('none');
       contactPage.classList.add('none');
+      techImgDesc.innerHTML = 'Select any picture';
     },
     500);
   };
@@ -73,4 +77,20 @@ document.addEventListener('DOMContentLoaded', () => {
     wipeScreen();
     appear(contactPage);
   });
+
+  // tech img description show
+
+
+  const showDescription = (event) => {
+    techImgDesc.classList.add('opaque');
+    setTimeout(() => {
+      techImgDesc.innerHTML = event.path[0].alt;
+      techImgDesc.classList.remove('opaque');
+    },
+    250);
+  };
+
+  for (const techImg of techImgArr) {
+    techImg.addEventListener('click', showDescription);
+  }
 });
