@@ -18,18 +18,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 0;
 
     p {
       font-family: 'Staatliches', cursive;
-      font-size: 1.5rem;
-
-      @media only screen and (min-width: 800px) {
-        font-size: 2rem;
-      }
+      font-size: 2rem;
     }
 
     .yellow {
-      color: yellow;
+      color: gold !important;
     }
 
     nav {
@@ -90,7 +87,7 @@
 
     p {
       text-align: justify;
-      padding: 1rem 1rem 2rem 1rem;
+      padding: 1rem;
 
       @media only screen and (min-width: 1025px) {
         font-size: 1rem;
